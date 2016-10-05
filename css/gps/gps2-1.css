@@ -1,18 +1,30 @@
-/* * { outline: 1px solid red; } */
-
-/* section {
-	column-count: 2;
-	column-gap: 40px
-} */
-
-section {
-    display: block;
-    width: 48%;
-    float: left;
+header, section, footer {
+    margin: 2%;
+    padding: 2%;
+    outline: 4px dashed black;
+    vertical-align: top;
+    background-color: white;
 }
 
-footer {
-    display: block;
-    width: 48%;
-    float: right;
+body {
+  background-image: url("http://www.planwallpaper.com/static/images/recycled_texture_background_by_sandeep_m-d6aeau9_PZ9chud.jpg");
+}
+
+section {
+	display: inline-block;
+	width: 40%;
+}
+
+.column-2 {
+  position: relative;
+  float: right;
+}
+
+h2 {
+  font-family: comic sans ms, sans serif;
+  color: dimgrey;
+}
+
+h1 {
+  text-align: center;
 }
