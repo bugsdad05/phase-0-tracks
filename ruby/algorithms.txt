@@ -1,0 +1,33 @@
+Teaching a Robot to Elevate
+
+-request input for "destination floor"
+	write value of "destination floor" to memory
+-determine value of "current floor"
+	-utilize sub-routines to determine current location
+- if "current floor = "destination floor", Naavigate to destination
+	else Navigate to elevator
+		-utilize sub-routines for locomotion, navigation, obsicle identification/ avoidance, ect
+-identify "current floor" and compare to "destination floor"
+	if current floor is < "destination floor", push "up" button
+	else push "down" button
+-once elevator arrives and doors open, enter elevator
+	-utilize sub-routines for determining status of elevator, and locomotion
+-locate floor selection panel
+	-utilize sub-routine for visual identification
+-select panel button that coorelates with "destination floor"
+
+Making Coffee Algorithm
+
+-locate coffee cup
+-locate coffee maker
+-locate coffee pod
+-place coffee cup in coffee maker
+-place coffee pod in coffee maker
+-decide: sm, md, lg
+-select appropriate button
+-wait for coffee to brew
+-retrieve coffee cup from coffee maker
+-dispose of used coffee pod
+-wait for coffee to achieve safe drinking temperature
+-enjoy coffee
+-repeat...
