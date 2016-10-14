@@ -1,5 +1,11 @@
 # Onboarding Questionaire (Vampire Detection Protocols)
 
+puts "How many employees will be added?"
+added_employees = gets.to_i
+
+while 
+	added_employees > 0
+
 puts "What is your name?"
 employee_name = gets.chomp
 
@@ -42,3 +48,6 @@ else
 end
 
 puts status
+
+added_employees = added_employees - 1
+end
