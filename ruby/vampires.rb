@@ -1,4 +1,4 @@
-# Onboarding Questionaire (Vampire Detection Protocols)
+# Onboarding Questionaire (Vampire Detection Protocols Rev 4.4f)
 
 puts "How many employees will be added?"
 added_employees = gets.to_i
@@ -31,23 +31,20 @@ while
 	else verified_age = false
 	end
 
-	if (verified_age && employee_garlic)
-		status = "Probably not a vampire"
-
-	elsif !(verified_age && employee_garlic && employee_insurance)
-		status = "Almost certainly a vampire"
-
-	elsif !(verified_age && (employee_garlic || employee_insurance))	 
-		status = "Probably a vampire"
-		
-	#elsif employee_name == "Drake Cula" || “Tu Fang”
+	if employee_name.to_s == "Drake Cula" || employee_name.to_s == "Tu Fang"
 		status = "Definitely a vampire"
-		
-	else
-		status = "Results inconclusive"
-	end
-
-	puts status
+elsif (verified_age && employee_garlic)
+	status = "Probably not a vampire"
+elsif
+	(!(verified_age) && !(employee_garlic) && !(employee_insurance))
+	status = "Almost certainly a vampire"
+elsif
+	(!(verified_age) && (!(employee_garlic) || !(employee_insurance)))
+	status = "Probably a vampire"
+else
+	status = "Results inconclusive"
+end
+puts status
 
 	added_employees = added_employees - 1
 end
