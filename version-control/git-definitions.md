@@ -13,3 +13,5 @@
 
 *What is a merge conflict?
 ## A merge conflict occurs anytime two or more merges attempt to write to the same code at the same time. A merge conflict can also occur if files being referenced in the push have been moved/ removed prior to the merge.
+
+### Just getting some love from Emmanuel...
