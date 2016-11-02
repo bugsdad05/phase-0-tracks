@@ -1,0 +1,14 @@
+#What is a block-level element? What are some examples of block-level elements? What are they used for?
+
+*A block level element always occupies the entire space of it's parent element, creating in effect, a "block". Most browsers display block-level elements with a newline before and after. <div>, <h1>-<h6>, <p>, and <form> are all examples. In HTML5 block elements are primarily responsible for "flow content".*
+
+
+
+#Can you find any good charts or resources on when you should use these elements? For example, when might you use a div versus a section?
+
+*The MDN has a useful discussion on block-level elements and the usages. It can be found at https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements.*
+
+
+#What is an inline element? Do inline elements usually nest inside block-level elements, or is it typically the other way around?
+
+*An Inline element, unlike a block-level element is one that occupies only the space bounded by the tags that define it. Generally speaking, inline elements contain only data or other inline elements. So while a block-level element may contain data, other block elements, or inline elements, an inline element do not contain block-level elements. By default inline elements do not begin with new line.*
