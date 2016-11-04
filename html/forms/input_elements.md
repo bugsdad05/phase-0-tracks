@@ -16,6 +16,3 @@
 	-- email, a field for entering an email address. The input is validated to be either a valid email address or empty prior to submitting to the server
 	-- password, a single-line text field whose calue is obsured. has a 'maxlength' attribute if desired.
 	-- date, a control for entering a date (year, month, and day with no time)
-
-
-
