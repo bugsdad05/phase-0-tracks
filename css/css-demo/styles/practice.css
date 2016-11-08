@@ -1,3 +1,4 @@
+/* paired with Gurkanver Brar */
 #contact-info {
 	font-size: .8em;
 }
@@ -13,9 +14,11 @@
 ul.accomplishments{
 	font-size: .8em;
 }
+
 li:hover{
 	color: red;
 }
+
 ul > li{
 	color: blue;
 }
