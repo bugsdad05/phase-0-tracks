@@ -4,7 +4,7 @@ body {
 }
 
 main {
-  width: 80%;
+  max-width: 70%;
   display: inline-block;
   vertical-align: middle;
 }
@@ -20,7 +20,7 @@ cite {
 }
 
 #external-links {
-  width: 20%;
+  max-width: 20%;
   display: inline-block;
   vertical-align: top;
 }
@@ -61,7 +61,7 @@ figcaption {
   width: 100%;
   background-color: white;
   border-bottom: 1px solid black;
-  padding: 20px;
+  padding: 10px;
   }
 }
 
