@@ -1,34 +1,46 @@
+/* Add background image for entire page */
+html {
+  background-image: url("wov.png");
+}
+
+/* Allow all body elements to be positioned relatively */
 body {
   position: relative;
 }
 
+/* Assign margin, padding, an outline, alignment, and background color to the header, section(s) and footer */
 header, section, footer {
     margin: 2%;
     padding: 2%;
-    outline: 4px dashed black;
+    outline: 4px dashed #DDAC3D;
     vertical-align: top;
-    background-color: white;
+    background-color: #C7B48B;
 }
 
-body {
+/* body {
   background-image: url("http://www.planwallpaper.com/static/images/recycled_texture_background_by_sandeep_m-d6aeau9_PZ9chud.jpg");
-}
+} */
 
+/* Display the section elements as inline blocks so they will sit side by side */
 section {
 	display: inline-block;
 	width: 40%;
 }
 
+/* Assure column 2 element stays on the right side */
 .column-2 {
   position: relative;
   float: right;
 }
 
+/* style the text for the h2 elements */
 h2 {
   font-family: comic sans ms, sans serif;
   color: dimgrey;
+  text-align: left;
 }
 
+/* style the text for the h1 elements */
 h1 {
   text-align: center;
 }
