@@ -25,6 +25,8 @@ header, section, footer {
 section {
 	display: inline-block;
 	width: 40%;
+  height: 700px;
+  overflow: auto;
 }
 
 /* Assure column 2 element stays on the right side */
@@ -35,7 +37,7 @@ section {
 
 /* style the text for the h2 elements */
 h2 {
-  font-family: comic sans ms, sans serif;
+  font-family: comic, sans ms, sans serif;
   color: dimgrey;
   text-align: left;
 }
