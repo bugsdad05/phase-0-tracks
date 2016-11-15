@@ -4,8 +4,8 @@ p "Hamster's Name"
 hamster_name = gets.chomp
 
 p "On a scale of 1-10, How loud is this hamster?"
-hamster_vol = gets.chomp
-hamster_vol.to_i
+hamster_vol = gets.chomp.to_i
+
 
 p "What is this hamster's fur color?"
 hamster_fur = gets.chomp
@@ -15,6 +15,9 @@ adoptable = gets.chomp
 
 p "Estimated age (In Earth years)"
 hamster_age = gets.chomp
+if hamster_age.empty?
+	hamster_age = nil
+end
 
 puts "Hamster's name of Record is #{hamster_name}"
 puts "Hamster's Volume level at check in is #{hamster_vol}"
