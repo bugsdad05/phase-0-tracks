@@ -4,7 +4,7 @@ Teaching a Robot to Elevate
 	write value of "destination floor" to memory
 -determine value of "current floor"
 	-utilize sub-routines to determine current location
-- if "current floor = "destination floor", Naavigate to destination
+- if "current floor = "destination floor", Navigate to destination
 	else Navigate to elevator
 		-utilize sub-routines for locomotion, navigation, obsicle identification/ avoidance, ect
 -identify "current floor" and compare to "destination floor"
