@@ -1,3 +1,7 @@
+body {
+  position: relative;
+}
+
 header, section, footer {
     margin: 2%;
     padding: 2%;
