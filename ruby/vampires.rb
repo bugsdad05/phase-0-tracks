@@ -18,29 +18,43 @@ while
 
 	puts "Do you like garlic bread? (Y/N)"
 	employee_garlic = gets.chomp
-	employee_garlic.to_s == 'y' ? true : false
+	case employee_garlic
+		when 'y', 'Y', 'yes'
+			employee_garlic = true
+		when 'n', 'N', 'no'
+			employee_garlic = false
+	end
+	#employee_garlic.to_s == 'y' ? true : false
 
 	puts "Would you like to enroll in the company's health insurance program? (Y/N)"
 	employee_insurance = gets.chomp
-	employee_insurance.to_s == 'y' ? true : false
+	case employee_insurance
+		when 'y', 'Y', 'yes'
+			employee_insurance = true
+		when 'n', 'N', 'no'
+			employee_insurance = false
+	end
+			
+	#employee_insurance.to_s == 'y' ? true : false
 
 	employee_age_checked = current_year - employee_birthyear
 
 	if employee_age == employee_age_checked
 		verified_age = true
 	else verified_age = false
-	end
+end
 
-	if employee_name.to_s == "Drake Cula" || employee_name.to_s == "Tu Fang"
+if employee_name.to_s == "Drake Cula" || employee_name.to_s == "Tu Fang"
 		status = "Definitely a vampire"
-elsif (verified_age && employee_garlic)
+elsif 
+	(verified_age && employee_garlic)
 	status = "Probably not a vampire"
+elsif
+	!(verified_age && employee_garlic) || !(verified_age && employee_insurance)
+	status = "Probably a vampire"
 elsif
 	(!(verified_age) && !(employee_garlic) && !(employee_insurance))
 	status = "Almost certainly a vampire"
-elsif
-	(!(verified_age) && (!(employee_garlic) || !(employee_insurance)))
-	status = "Probably a vampire"
 else
 	status = "Results inconclusive"
 end
