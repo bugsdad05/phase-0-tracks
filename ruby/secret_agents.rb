@@ -19,7 +19,7 @@ def decrypt (encrypted_password)
   #initialize counter and 2 variables
   counter = 0
   decrypted_password = ""
-  alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+  alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz !"
   #use .length to loop thru the string and 'alphabet' to pull desired letter. Breaks with no alphabetic characters.
   while counter < encrypted_password.length
     local_letter = encrypted_password[counter]
@@ -48,7 +48,7 @@ while true
     ns = decrypt(sentence)
   #both
   else 
-    ns = encrypt(decrypt(sentence))
+    ns = decrypt(encrypt(sentence))
   end
   puts ns
 end
