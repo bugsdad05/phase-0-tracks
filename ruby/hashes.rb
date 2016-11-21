@@ -30,7 +30,7 @@ p form_data
 #Provide the user the opportunityto update a key; if user enters "none"
 #-skip it, if user enters  a valid key value ask for new value and update
 # the hash
-puts "Enter key to update?"
+puts "Enter key to update? (type 'none' to exit)"
 update_key = gets.chomp
 if update_key == "none"
 	puts "Thank you"
