@@ -38,6 +38,4 @@ else
 	puts "Enter correction"
 	form_data[update_key] = gets.chomp
 	p form_data
-end 
-
-#re-print the hash to the screen
+end
