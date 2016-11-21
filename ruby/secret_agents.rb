@@ -1,11 +1,13 @@
 # define method encrypt
 def encrypt(secret_password)
   counter = 0
+  #use .length to loop thru the string
   while counter < secret_password.length
     # special case for letter z
     if secret_password[counter] == "z" 
       then secret_password[counter] = "a"
     else
+     #use .next! to alter the string permanently
       secret_password[counter] = secret_password[counter].next!
     end
     counter +=1
@@ -16,12 +18,12 @@ end
 # define method decrypt
 def decrypt (encrypted_password)
   
-  #initialize counter and 2 variables
+#initialize counter and 2 variables
   counter = 0
   decrypted_password = ""
   alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz !"
   #use .length to loop thru the string and 'alphabet' to pull desired letter. Breaks with no alphabetic characters.
-  while counter < encrypted_password.length
+ while counter < encrypted_password.length
     local_letter = encrypted_password[counter]
     decrypted_letter = alphabet[alphabet.index(local_letter) -1]
     decrypted_password += decrypted_letter
