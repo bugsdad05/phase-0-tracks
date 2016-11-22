@@ -61,3 +61,19 @@ def vowel_adv(str)
   str_new.join
 end
 vowel_adv "aeiou"
+
+
+#a method for advancing consonants
+def consonant_adv(str)
+  consonants = %w(b c d f g h j k l m n p q r s t v w x y z)
+  str = str.split('')
+  str_new = str.map do |char|
+    if consonants.include?(char)
+      consonants.rotate(1)[consonants.index(char)]
+    else
+      char
+    end
+  end
+  str_new.join
+end
+consonant_adv "bhgt"
