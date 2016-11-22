@@ -50,7 +50,7 @@ p fib(100)
 
 # RELEASE 2
 
-# Implementing BUBBLE SORT
+# Implementing BUBBLE SORT - first attempt
 # 
 # 1. taking an array of numbers, order them smallest to largest
 # 2. take the first two numbers and define the largest the number
@@ -82,7 +82,7 @@ p fib(100)
 #     end
 #     return array
 # end
-
+# BUBBLE SORT - second attempt
 def bubble_sort (array)
     n = array.length
 
