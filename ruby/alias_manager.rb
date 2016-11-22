@@ -78,20 +78,27 @@ def consonant_adv(str)
 end
 #Test call- consonant_adv "bhgt"
 
-#a method for splitting 'name'
+#a method for splitting 'name' into first name
 def first_name
     if name.split.count > 1
       name.split[0..-2].join(' ')
     else
       name
     end
-  end
+ end
 
-  def last_name
+#a method for splitting 'name' into last name
+def last_name
     if name.split.count > 1
       name.split.last
     end
-  end
+end
+
+#a method for eliminating cap letters and reversing 'name'
+def name_reverse(name)
+	name.downcase!.split(' ').reverse!.join(' ')
+end
 
   #Test call- first_name "John Morgan Smith"
   #Test call- last_name "John Latitude Smith"
+  #Test call- name_reverse "John Q P Adams"
