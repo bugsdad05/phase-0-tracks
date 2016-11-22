@@ -34,3 +34,32 @@
 #If you do successfully implement the algorithm, "Felicia Torres" will become 
 #{}"Vussit Gimodoe", which is a rather odd name. Luckily, our dearest Vussit is 
 #from a country no one has ever heard of, mainly because it doesn't really exist.
+
+vowels = ['a', 'e', 'i', 'o', 'u']
+rotated_vowels = vowels.rotate(1)
+
+def vowel_adv(str)
+  new_str = str.dup
+  new_str.each_char.with_index do |char, i|
+    index = vowels.index char
+    if index
+      new_str[i] = rotated_vowels[index]
+    end
+  end
+  new_str
+end
+
+#same thing, different approach
+def vowel_adv(str)
+  vowels = ["a", "e", "i", "o", "u"]
+  str = str.split('')
+  str_new = str.map do |char|
+    if vowels.include?(char)
+      vowels.rotate(1)[vowels.index(char)]
+    else
+      char
+    end
+  end
+  str_new.join
+end
+vowel_adv "aeiou"
