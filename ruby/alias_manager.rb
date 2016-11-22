@@ -60,7 +60,7 @@ def vowel_adv(str)
   end
   str_new.join
 end
-vowel_adv "aeiou"
+#Test call- vowel_adv "aeiou"
 
 
 #a method for advancing consonants
@@ -76,4 +76,22 @@ def consonant_adv(str)
   end
   str_new.join
 end
-consonant_adv "bhgt"
+#Test call- consonant_adv "bhgt"
+
+#a method for splitting 'name'
+def first_name
+    if name.split.count > 1
+      name.split[0..-2].join(' ')
+    else
+      name
+    end
+  end
+
+  def last_name
+    if name.split.count > 1
+      name.split.last
+    end
+  end
+
+  #Test call- first_name "John Morgan Smith"
+  #Test call- last_name "John Latitude Smith"
