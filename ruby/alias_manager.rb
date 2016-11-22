@@ -35,21 +35,19 @@
 #{}"Vussit Gimodoe", which is a rather odd name. Luckily, our dearest Vussit is 
 #from a country no one has ever heard of, mainly because it doesn't really exist.
 
-vowels = ['a', 'e', 'i', 'o', 'u']
-rotated_vowels = vowels.rotate(1)
 
-def vowel_adv(str)
-  new_str = str.dup
-  new_str.each_char.with_index do |char, i|
-    index = vowels.index char
-    if index
-      new_str[i] = rotated_vowels[index]
-    end
-  end
-  new_str
-end
+##Step - Swap 1st and last names
+##Step - Get rid of any upper case letters
+##Step - Identify all vowels
+##Step - Advance all vowels
+##Step - Identify all consonants
+##Step - Advance all consonants
+##Step - Driver code/ User interface
+##Step - Store the Alias matched with real names
 
-#same thing, different approach
+
+
+#a method for advancing vowels
 def vowel_adv(str)
   vowels = ["a", "e", "i", "o", "u"]
   str = str.split('')
