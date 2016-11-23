@@ -45,7 +45,10 @@
 ##Step - Driver code/ User interface
 ##Step - Store the Alias matched with real names
 
-
+#a method for eliminating cap letters and reversing 'name'
+def name_reverse(name)
+	name.downcase!.split(' ').reverse!.join(' ')
+end
 
 #a method for advancing vowels
 def vowel_adv(str)
