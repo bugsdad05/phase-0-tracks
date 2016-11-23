@@ -133,7 +133,20 @@ def name_faker(name)
       char
     end
   end
-  str_new.join
+  str_new = str_new.join.split.map(&:capitalize).join(' ')
 end
 
-p name_faker("Felicia Torres")
+#driver code
+collection = {}
+puts "Enter a name. (letters and spaces only, either case) or 'Q' to end program"
+while user_input = gets.chomp.upcase!
+  case user_input
+  when "Q"
+    puts "Thanks for using the Name Classifier 5000!"
+    p collection
+    break
+  else
+    encrypt_name = name_faker(user_input)
+  end
+  collection[user_input] = encrypt_name
+end
