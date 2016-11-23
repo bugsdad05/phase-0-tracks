@@ -45,28 +45,87 @@
 ##Step - Driver code/ User interface
 ##Step - Store the Alias matched with real names
 
-
+##a method for eliminating cap letters and reversing 'name'
+#def name_reverse(name)
+#	name.downcase!.split(' ').reverse!.join(' ')
+#end
+#
+##a method for advancing vowels
+#def vowel_adv(str)
+#  vowels = ["a", "e", "i", "o", "u"]
+#  str = str.split('')
+#  str_new = str.map do |char|
+#    if vowels.include?(char)
+#      vowels.rotate(1)[vowels.index(char)]
+#    else
+#      char
+#    end
+#  end
+#  str_new.join
+#end
+##Test call- vowel_adv "aeiou"
+#
+#
+##a method for advancing consonants
+#def consonant_adv(str)
+#  consonants = %w(b c d f g h j k l m n p q r s t v w x y z)
+#  str = str.split('')
+#  str_new = str.map do |char|
+#    if consonants.include?(char)
+#      consonants.rotate(1)[consonants.index(char)]
+#    else
+#      char
+#    end
+#  end
+#  str_new.join
+#end
+##Test call- consonant_adv "bhgt"
+#
+##a method for splitting 'name' into first name
+#def first_name
+#    if name.split.count > 1
+#      name.split[0..-2].join(' ')
+#    else
+#      name
+#    end
+# end
+#
+##a method for splitting 'name' into last name
+#def last_name
+#    if name.split.count > 1
+#      name.split.last
+#    end
+#end
+#
+##a method for eliminating cap letters and reversing 'name'
+#def name_reverse(name)
+#	name.downcase!.split(' ').reverse!.join(' ')
+#end
+#
+#  #Test call- first_name "John Morgan Smith"
+#  #Test call- last_name "John Latitude Smith"
+#  #Test call- name_reverse "John Q P Adams"
+#
+#a method for eliminating cap letters and reversing 'name'
+def name_faker(name)
+	name = name.downcase!.split(' ').reverse!.join(' ')
 
 #a method for advancing vowels
-def vowel_adv(str)
   vowels = ["a", "e", "i", "o", "u"]
-  str = str.split('')
-  str_new = str.map do |char|
+  name = name.split('')
+  name_new = name.map do |char|
     if vowels.include?(char)
       vowels.rotate(1)[vowels.index(char)]
     else
       char
     end
   end
-  str_new.join
-end
-#Test call- vowel_adv "aeiou"
+  name_new = name_new.join
 
 
 #a method for advancing consonants
-def consonant_adv(str)
   consonants = %w(b c d f g h j k l m n p q r s t v w x y z)
-  str = str.split('')
+  str = name_new.split('')
   str_new = str.map do |char|
     if consonants.include?(char)
       consonants.rotate(1)[consonants.index(char)]
@@ -74,31 +133,20 @@ def consonant_adv(str)
       char
     end
   end
-  str_new.join
-end
-#Test call- consonant_adv "bhgt"
-
-#a method for splitting 'name' into first name
-def first_name
-    if name.split.count > 1
-      name.split[0..-2].join(' ')
-    else
-      name
-    end
- end
-
-#a method for splitting 'name' into last name
-def last_name
-    if name.split.count > 1
-      name.split.last
-    end
+  str_new = str_new.join.split.map(&:capitalize).join(' ')
 end
 
-#a method for eliminating cap letters and reversing 'name'
-def name_reverse(name)
-	name.downcase!.split(' ').reverse!.join(' ')
+#driver code
+collection = {}
+puts "Enter a name. (letters and spaces only, either case) or 'Q' to end program"
+while user_input = gets.chomp.upcase!
+  case user_input
+  when "Q"
+    puts "Thanks for using the Name Classifier 5000!"
+    p collection
+    break
+  else
+    encrypt_name = name_faker(user_input)
+  end
+  collection[user_input] = encrypt_name
 end
-
-  #Test call- first_name "John Morgan Smith"
-  #Test call- last_name "John Latitude Smith"
-  #Test call- name_reverse "John Q P Adams"
