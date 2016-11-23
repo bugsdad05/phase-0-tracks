@@ -7,11 +7,13 @@ end
 #p calc 18, 9, :/
 #p calc 98, 67, :-
 
+collection = {}
 puts "Enter a number or 'q' to end program"
 while a = gets.chomp
   case a
   when "q"
     puts "Thanks for using the CalcIT!"
+    p collection
     break
   else
   	a = a.to_i
@@ -21,5 +23,6 @@ while a = gets.chomp
     operator = gets.chomp
     calculation = calc(a, b, operator)
   end
-  p calculation
+  collection[a] = b, operator
+  p "#{a} #{operator}#{b} = #{calculation}"
 end
