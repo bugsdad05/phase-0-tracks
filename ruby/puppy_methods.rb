@@ -1,5 +1,10 @@
 class Puppy
 
+  # Define initialize method
+  def initialize()
+  	puts "Initializing a new puppy instance ..."
+  end
+
   def fetch(toy)
     puts "I brought back the #{toy}!"
     toy
@@ -13,7 +18,7 @@ class Puppy
   end
 
   # Define roll_over method
-  def roll_over
+  def roll_over()
   	puts "rolls over"
   end
 
@@ -24,8 +29,8 @@ class Puppy
   	dy
   end
 
-  #Define play_dead method
-  def play_dead
+  # Define play_dead method
+  def play_dead()
   	puts "Ok, ok...I'm dead!"  	
   end
 
