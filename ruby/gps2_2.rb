@@ -17,12 +17,10 @@
     temp_array.each do |item|
 		list[item] = 1    	
     end
-    print list
     list
   end
 
  #test code
-
  test_string = "bannana orange lettuce milk"
  grocery_list = create_list(test_string)
 
@@ -36,23 +34,32 @@
 # get 'grocery_list' and add a key/value pair
 def add_to_list(list_hash, item, qty)
 	list_hash[item] = qty
-	print list_hash
 	list_hash	
 end
 
 #test code
-
-appended_grocery_list = add_to_list(grocery_list, "peas", 3)
-
-
+grocery_list = add_to_list(grocery_list, "peas", 3)
+p grocery_list
 
 
-# output:
+
+
+
 
 # Method to remove an item from the list
-# input:
+# input: 2 attributes, 'grocery_list', and list item to remove
+# output: - modified hash
 # steps:
-# output:
+def remove_from_list(list_hash, item)
+	list_hash.delete(item) { |el| "#{el} not found" }
+	list_hash
+end
+
+#test code
+
+grocery_list = remove_from_list(grocery_list, "bannana")
+p grocery_list
+
 
 # Method to update the quantity of an item
 # input:
