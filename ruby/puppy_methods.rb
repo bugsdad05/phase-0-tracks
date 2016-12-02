@@ -10,6 +10,11 @@ class Puppy
   	barks = barks.to_i
   	puts "Woof!"*barks
   	barks
+  end
+
+  # Define roll_over method
+  def roll_over
+  	puts "rolls over"
   end	
 
 end
@@ -20,5 +25,6 @@ duchess = Puppy.new
 toy = "bone"
 p duchess.fetch(toy)
 p duchess.speak(5)
+p duchess.roll_over
 
 
