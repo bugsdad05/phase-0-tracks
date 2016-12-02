@@ -1,3 +1,4 @@
+#Paired with: Jim Miller/ RJ Arena
 # our calculator should ...
 # add two integers and return an integer
 # subtract two integers and return an integer
