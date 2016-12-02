@@ -69,12 +69,15 @@ end
 
 # Driver code for "Christmas_song" class
 
-song_instances = {}
+song_instances = []
 counter = 0
 while counter < 50
 	song = Christmas_songs.new
+	song_instances.push(song)
 	counter += 1	
 end
+
+puts song_instances
 
 #song_instances.each do |i|
  #   my_animal = Animal.new(e)
