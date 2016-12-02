@@ -36,7 +36,11 @@ def add_to_list(list_hash, item, qty)
 end
 
 #test code
-grocery_list = add_to_list(grocery_list, "peas", 3)
+grocery_list = add_to_list(grocery_list, "Lemonade", 3)
+grocery_list = add_to_list(grocery_list, "Tomatoes", 3)
+grocery_list = add_to_list(grocery_list, "Onions", 1)
+grocery_list = add_to_list(grocery_list, "Ice Cream", 4)
+
 #p grocery_list
 
 
@@ -50,7 +54,7 @@ def remove_from_list(list_hash, item)
 end
 
 #test code
-grocery_list = remove_from_list(grocery_list, "bannana")
+grocery_list = remove_from_list(grocery_list, "Lemonade")
 #p grocery_list
 
 
@@ -64,7 +68,7 @@ def update_qty(list_hash, item, qty)
 end
 
 #test code
-grocery_list = update_qty(grocery_list, "orange", 24)
+grocery_list = update_qty(grocery_list, "Ice Cream", 1)
 #p grocery_list
 
 
@@ -74,8 +78,17 @@ grocery_list = update_qty(grocery_list, "orange", 24)
 # output: a grocery list printed out with key/ value pairs on seperate lines
 # steps:
 def print_list(list_hash)
-	list_hash.each {|key, value| puts "#{key} - #{value}" }
+	list_hash.each {|key, value| puts "#{key}; qty: #{value}" }
 end
 
 #test code
 print_list(grocery_list)
+
+#Add the following items to your list
+#Lemonade, qty: 2
+#Tomatoes, qty: 3
+#Onions, qty: 1
+#Ice Cream, qty: 4
+#Remove the Lemonade from your list
+#Update the Ice Cream quantity to 1
+#Print out your list (Is this readable and nice looking)?
