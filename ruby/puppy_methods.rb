@@ -36,14 +36,34 @@ class Puppy
 
 end
 
-# Driver Code
-# Initialize a new instance of "Puppy" called 'duchess'
+# Driver Code for "Puppy" class
+
 duchess = Puppy.new
-toy = "bone"
-p duchess.fetch(toy)
+p duchess.fetch("bone")
 p duchess.speak(5)
 p duchess.roll_over
 p duchess.dog_years(9)
 p duchess.play_dead
+
+
+# Implementing a new class
+class Christmas_songs
+
+  # Define initialize method
+  def initialize()
+  	puts "Initializing a new puppy instance ..."
+  end
+
+  # Define "sing" method
+  def sing
+  	puts "fa la la la la, la la la la"  	
+  end
+
+  # Define "please" method
+  def please
+  	puts "Please stop already!!!"
+  end
+
+end
 
 
