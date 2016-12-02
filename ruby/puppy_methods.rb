@@ -48,10 +48,9 @@ p duchess.play_dead
 
 # Implementing a new class
 class Christmas_songs
-  attr_accessor :id
+
   # Define initialize method
-  def initialize(id)
-  	@id = id
+  def initialize
   	puts "Initializing a new Christmas_songs instance ..."
   end
 
@@ -76,12 +75,5 @@ while counter < 50
 	song_instances.push(song)
 	counter += 1	
 end
-
-puts song_instances
-
-#song_instances.each do |i|
- #   my_animal = Animal.new(e)
-
-  #  my_instances[e] = my_animal
-#end
-
+song_instances.each {|id| id.sing}
+song_instances.each {|id| id.please}
