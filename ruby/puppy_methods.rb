@@ -51,7 +51,7 @@ class Christmas_songs
 
   # Define initialize method
   def initialize()
-  	puts "Initializing a new puppy instance ..."
+  	puts "Initializing a new Christmas_songs instance ..."
   end
 
   # Define "sing" method
@@ -65,5 +65,11 @@ class Christmas_songs
   end
 
 end
+
+# Driver code for "Christmas_song" class
+
+jingle_bells = Christmas_songs.new
+p jingle_bells.sing
+p jingle_bells.please
 
 
