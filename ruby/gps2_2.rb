@@ -23,6 +23,7 @@
  #test code
  test_string = "bannana orange lettuce milk"
  grocery_list = create_list(test_string)
+ p grocery_list
 
   
   
@@ -74,7 +75,14 @@ grocery_list = update_qty(grocery_list, "orange", 24)
 p grocery_list
 
 
+
 # Method to print a list and make it look pretty
-# input:
+# input: 2 attributes; 'grocery_list', and key
+# output: a grocery list printed out with key/ value pairs on seperate lines
 # steps:
-# output:
+def print_list(list_hash)
+	list_hash.each {|key, value| puts "#{key} - #{value}" }
+end
+
+#test code
+print_list(grocery_list)
