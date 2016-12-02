@@ -56,15 +56,23 @@ def remove_from_list(list_hash, item)
 end
 
 #test code
-
 grocery_list = remove_from_list(grocery_list, "bannana")
 p grocery_list
 
 
 # Method to update the quantity of an item
-# input:
+# input: 3 attributes; 'grocery_list', list item to update, and new quantity
+# output: - modified hash
 # steps:
-# output:
+def update_qty(list_hash, item, qty)
+  	list_hash[item] = qty
+  	list_hash
+end
+
+#test code
+grocery_list = update_qty(grocery_list, "orange", 24)
+p grocery_list
+
 
 # Method to print a list and make it look pretty
 # input:
