@@ -6,6 +6,11 @@ class Puppy
   end
 
   # Define speak method
+  def speak(barks)
+  	barks = barks.to_i
+  	puts "Woof!"*barks
+  	barks
+  end	
 
 end
 
@@ -14,5 +19,6 @@ end
 duchess = Puppy.new
 toy = "bone"
 p duchess.fetch(toy)
+p duchess.speak(5)
 
 
