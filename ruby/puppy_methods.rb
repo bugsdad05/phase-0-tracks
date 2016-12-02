@@ -48,9 +48,10 @@ p duchess.play_dead
 
 # Implementing a new class
 class Christmas_songs
-
+  attr_accessor :id
   # Define initialize method
-  def initialize()
+  def initialize(id)
+  	@id = id
   	puts "Initializing a new Christmas_songs instance ..."
   end
 
@@ -68,8 +69,16 @@ end
 
 # Driver code for "Christmas_song" class
 
-jingle_bells = Christmas_songs.new
-p jingle_bells.sing
-p jingle_bells.please
+song_instances = {}
+counter = 0
+while counter < 50
+	song = Christmas_songs.new
+	counter += 1	
+end
 
+#song_instances.each do |i|
+ #   my_animal = Animal.new(e)
+
+  #  my_instances[e] = my_animal
+#end
 
