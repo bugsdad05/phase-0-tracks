@@ -1,5 +1,5 @@
 #GPS 2.2
-#Paired with ?????????
+#Paired with (pair did not show, worked as solo challenge)
 
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
@@ -23,10 +23,7 @@
  #test code
  test_string = "bannana orange lettuce milk"
  grocery_list = create_list(test_string)
- p grocery_list
-
-  
-  
+ #p grocery_list  
  
 
 # Method to add an item to a list
@@ -40,11 +37,7 @@ end
 
 #test code
 grocery_list = add_to_list(grocery_list, "peas", 3)
-p grocery_list
-
-
-
-
+#p grocery_list
 
 
 # Method to remove an item from the list
@@ -58,7 +51,7 @@ end
 
 #test code
 grocery_list = remove_from_list(grocery_list, "bannana")
-p grocery_list
+#p grocery_list
 
 
 # Method to update the quantity of an item
@@ -72,7 +65,7 @@ end
 
 #test code
 grocery_list = update_qty(grocery_list, "orange", 24)
-p grocery_list
+#p grocery_list
 
 
 
