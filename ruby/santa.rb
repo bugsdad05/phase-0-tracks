@@ -18,8 +18,7 @@ you're able to initialize a Santa instance and call its methods.
 # Rel 0
 # Declare 'Santa' class
 class Santa
-	attr_reader :ethnicity
-	attr_accessor :age, :gender
+	attr_accessor :age, :gender, :ethnicity
 	# define 'initialize' method
 	def initialize(gender, ethnicity)
 		puts "Initializing a Santa instance..."
@@ -85,8 +84,10 @@ santas = []
 # build a santa collection
 gender_choices.length.times do |i|
 	santas << Santa.new(gender_choices[i], ethnicity_choices[i])
+	puts santas
 end
 
 santas[2].get_mad_at("Dasher")
 santas[2].gender = "male"
-puts ""
+
+
