@@ -33,15 +33,15 @@ class TodoList
 	def get_items()
 		@tasks
 	end
-
+	#define method 'add_item'
 	def add_item(task)
 		@tasks << task
 	end
-
+	#define method 'delete_item'
 	def delete_item(task)
 		@tasks.delete(task)
 	end
-
+	#define method 'get_item'
 	def get_item(idx)
 		@tasks[idx]
 	end
