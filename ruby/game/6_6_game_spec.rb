@@ -1,3 +1,5 @@
+#Rspec test code
+
 require_relative 'GuessGame'
 
 describe GuessGame do

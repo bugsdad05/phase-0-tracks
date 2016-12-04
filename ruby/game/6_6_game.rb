@@ -95,5 +95,5 @@ end
 if(game.game_won)
 	puts "Congratulations you won!\nYou guessed the secret word/phrase: #{game.guess_word.join}"
 else
-	puts "You lose, try again next time!"
+	puts " Sorry you lose, try again next time!"
 end
