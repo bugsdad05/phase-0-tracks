@@ -1,7 +1,13 @@
 # Assignment 6.4 *Modules*
 
-#Rel 1
+#Rel 1 - define a 'Shout module'
 
-module Shhout
-	# we'll pust some methods here soon, but this code is fine for now!
+module Shout
+	def self.yell_angrily(words)
+		words + "!!!" + " :("
+	end
+
+	def self.yell_happily(words)
+		words + "!!!" + " :)"
+	end
 end
