@@ -1,6 +1,7 @@
+#DBC Assignment 6.4 Rel 2
 module Flight
   def take_off(altitude)
-    puts "Taking off and ascending until reaching #{altitude} ..."
+    puts "Taking off and ascending until reaching #{altitude} ...."
   end
 end
 
