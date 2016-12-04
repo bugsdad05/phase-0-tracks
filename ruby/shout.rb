@@ -37,5 +37,5 @@ end
 new_adult = Adult.new
 new_baby = Baby.new
 
-p new_adult.yell_happily("Yay")
+p new_adult.yell_happily("Yippee")
 p new_baby.yell_angrily("Wahhh")
