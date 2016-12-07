@@ -47,8 +47,15 @@ class Santa
 	def get_mad_at(reindeer)
 		idx = @reindeer_ranking.index(reindeer)
 		if idx != nil
-			@reindeer_ranking.insert(-1,@reindeer_ranking.delete_at(idx) )
+			#@reindeer_ranking.insert(-1,@reindeer_ranking.delete_at(idx) )
+			#@reindeer_ranking.insert(-1,@reindeer_ranking[idx] )
+			#@reindeer_ranking.delete_at(idx)
+			#pariah = @reindeer_ranking.delete_at(idx)
+			#@reindeer_ranking << pariah
+			@reindeer_ranking << @reindeer_ranking.delete_at(idx)
+
 		end
+		p @reindeer_ranking
 	end
 
 	# define setter method for @gender
@@ -83,7 +90,7 @@ santas = []
 # build a santa collection
 gender_choices.length.times do |i|
 	santas << Santa.new(gender_choices[i], ethnicity_choices[i])
-	puts santas
+	#puts santas
 end
 
 santas[2].get_mad_at("Dasher")
