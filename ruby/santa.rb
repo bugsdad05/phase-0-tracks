@@ -50,7 +50,8 @@ class Santa
 	def get_mad_at(reindeer)
 		idx = @reindeer_ranking.index(reindeer)
 		if idx != nil
-			@reindeer_ranking.insert(-1,@reindeer_ranking.delete_at(idx) )
+			@reindeer_ranking.insert(-1,@reindeer_ranking)
+			@reindeer_ranking.delete_at[idx]
 		end
 	end
 
