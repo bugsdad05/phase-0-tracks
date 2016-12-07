@@ -3,11 +3,14 @@
 Eventually, your simulator will build thousands of Santas, but for now, 
 start by defining a Santa class in phase-0-tracks/ruby/santa.rb. 
 Your class should have three instance methods:
+
 A speak method that will print "Ho, ho, ho! Haaaappy holidays!" 
 (Santa has been working on being more inclusive.)
+
 An eat_milk_and_cookies method that takes a cookie type 
 (example: "snickerdoodle") as a parameter and prints 
 "That was a good <type of cookie here>!" 
+
 An initialize method that prints "Initializing Santa instance ...".
 Add a bit of code below your class declaration to check that 
 you're able to initialize a Santa instance and call its methods.
@@ -47,15 +50,8 @@ class Santa
 	def get_mad_at(reindeer)
 		idx = @reindeer_ranking.index(reindeer)
 		if idx != nil
-			#@reindeer_ranking.insert(-1,@reindeer_ranking.delete_at(idx) )
-			#@reindeer_ranking.insert(-1,@reindeer_ranking[idx] )
-			#@reindeer_ranking.delete_at(idx)
-			#pariah = @reindeer_ranking.delete_at(idx)
-			#@reindeer_ranking << pariah
-			@reindeer_ranking << @reindeer_ranking.delete_at(idx)
-
+			@reindeer_ranking.insert(-1,@reindeer_ranking.delete_at(idx) )
 		end
-		p @reindeer_ranking
 	end
 
 	# define setter method for @gender
@@ -90,9 +86,8 @@ santas = []
 # build a santa collection
 gender_choices.length.times do |i|
 	santas << Santa.new(gender_choices[i], ethnicity_choices[i])
-	#puts santas
+	puts santas
 end
 
 santas[2].get_mad_at("Dasher")
 santas[2].gender = "male"
-
