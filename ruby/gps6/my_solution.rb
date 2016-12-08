@@ -4,25 +4,25 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
+# require_relative loads a file from the relative path as provided by the requesting file. Require uses ruby's load path.
 #
 require_relative 'state_data'
 
 class VirusPredictor
-
+# takes 3 arguments and sets 3 instance variables
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
-
+# creates and populates 2 arrays with instane variables
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
   end
 
   private
-
+# takes 3 arguments, sets value of "number_of_deaths" based on 'populations' and a multiplier rounded down and .to_i
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -40,7 +40,7 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
-
+# takes 2 arguments returns variable speed
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -68,8 +68,17 @@ end
 
 # DRIVER CODE
  # initialize VirusPredictor for each state
+def total_prediction
+  STATE_DATA.each do |state, state_info|
+    report = VirusPredictor.new(state, STATE_DATA[state][:population_density], STATE_DATA[state][:population])
+    report.virus_effects
+  end
+end
+total_prediction
 
 
+=begin
+# TEST CODE
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
 
@@ -82,6 +91,6 @@ california.virus_effects
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
 
-
+=end
 #=======================================================================
 # Reflection Section
