@@ -39,7 +39,7 @@ function reverseString(str) {
 // DRIVER CODE
 
 var test = 1;
-if (test == 1); {
+if (test == 1) {
   //reverseString('Potatoe Chip');
   var test_str = "Potatoe Chips";
   console.log(test_str);

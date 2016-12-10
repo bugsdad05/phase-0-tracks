@@ -50,8 +50,9 @@ class Santa
 	def get_mad_at(reindeer)
 		idx = @reindeer_ranking.index(reindeer)
 		if idx != nil
-			@reindeer_ranking.insert(-1,@reindeer_ranking)
-			@reindeer_ranking.delete_at[idx]
+			#@reindeer_ranking.insert(-1,@reindeer_ranking)
+			#@reindeer_ranking.delete_at[idx]
+			@reindeer_ranking << @reindeer_ranking.delete_at(idx)
 		end
 	end
 
@@ -79,7 +80,7 @@ end
 
 # Rel 1
 # create an array of reindeer names, genders identities, ethnicities
-reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+#reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 gender_choices = ["male", "female", "adjustable", "N/A", "Still working that out", "singular"]
 ethnicity_choices = ["black", "white", "latino", "asian", "klingon", "formetoknowandyoutofigureout"]
 # create an empty container for our santa collection
