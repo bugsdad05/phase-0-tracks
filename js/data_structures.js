@@ -12,3 +12,25 @@ for (var i = 0; i < names.length; i++) {
 
 
 console.log(horses);
+
+
+//start a automobile constructor
+// var car = {vin: 0, make: '', model: ''};
+
+function Car(vin, make, model) {
+ console.log("Car specifications:", this);
+ this.vin = vin;
+ this.make = make;
+ this.model = model;
+ this.sound = function() {
+   console.log('Man this car sounds awesome!!!');
+ }
+
+ console.log("Car Initialization completed...");
+}
+
+// auto constructor code
+
+var firstCar = new Car(23456, 'Porsche', 'Carrera 911 4S');
+console.log(firstCar);
+console.log(firstCar.sound());
