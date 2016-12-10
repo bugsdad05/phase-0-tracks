@@ -33,13 +33,15 @@ function reverseString(str) {
 	return newString; // "olleh"
 // TEST CODE
 //	console.log(newString);
-// Step . Close the function
+// -- Step 5. Close the function
 }     
 
 // DRIVER CODE
 
 var test = 1;
 if (test == 1); {
-  reverseString('Potatoe Chip');
-  console.log(newString);
+  //reverseString('Potatoe Chip');
+  var test_str = "Potatoe Chips";
+  console.log(test_str);
+  console.log(reverseString(test_str));
 }
