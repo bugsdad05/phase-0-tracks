@@ -1,0 +1,64 @@
+
+__Q1__
+sqlite> select * from vehicles;
+1|A3|Red|1
+2|528i|Grey|2
+3|R1200RT|Grey|2
+4|Outback Sport|Blue-Green|3
+sqlite>
+
+__Q2__
+sqlite> select * from vehicles;
+id|vehicle|color|man_id
+1|A3|Red|1
+2|528i|Grey|2
+3|R1200RT|Grey|2
+4|Outback Sport|Blue-Green|3
+sqlite> update vehicles set color="Steel_Grey" where vehicle="R1200RT";
+sqlite> select * from vehicles;
+id|vehicle|color|man_id
+1|A3|Red|1
+2|528i|Grey|2
+3|R1200RT|Steel_Grey|2
+4|Outback Sport|Blue-Green|3
+sqlite>
+
+__Q3__
+sqlite> select * from vehicles, makers where vehicles.man_id = makers.id;
+id|vehicle|color|man_id|id|name
+1|A3|Red|1|1|Audi
+2|528i|Grey|2|2|BMW
+3|R1200RT|Grey|2|2|BMW
+4|Outback Sport|Blue-Green|3|3|Subaru
+sqlite> .exit
+
+__Q4__
+sqlite> SELECT vehicles.vehicle, makers.name FROM vehicles JOIN makers ON vehicles.man_id = makers.id;
+vehicle|name
+A3|Audi
+528i|BMW
+R1200RT|BMW
+Outback Sport|Subaru
+sqlite>
+
+__Q5__
+sqlite> delete from vehicles where vehicle='R1200RT';
+sqlite> SELECT vehicles.vehicle, makers.name FROM vehicles JOIN makers ON vehicles.man_id = makers.id;
+vehicle|name
+A3|Audi
+528i|BMW
+Outback Sport|Subaru
+sqlite>
+
+_Rel 3_
+__Q1__
+INNER JOIN: Returns all rows when there is at least one match in BOTH   
+    tables.INNER JOIN is the same as JOIN. 
+    http://www.w3schools.com/sql/img_innerjoin.gif
+
+LEFT JOIN: Return all rows from the left table, and the matched rows from the right table. http://www.w3schools.com/sql/img_leftjoin.gif
+
+RIGHT JOIN: Return all rows from the right table, and the matched rows from the left table. http://www.w3schools.com/sql/img_rightjoin.gif
+FULL JOIN: Return all rows when there is a match in ONE of the tables
+    http://www.w3schools.com/sql/img_fulljoin.gif
+
