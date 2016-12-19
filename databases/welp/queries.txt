@@ -1,0 +1,116 @@
+CREATE TABLE reviews (
+   id INTEGER,
+   user_id INTEGER,
+   business_id INTEGER,
+   FOREIGN KEY (user_id) REFERENCES users(id),
+   FOREIGN KEY (business_id) REFERENCES businesses(id),
+   PRIMARY KEY (id)
+   );
+ALTER TABLE reviews  ADD COLUMN stars INT;
+ALTER TABLE reviews  ADD COLUMN comment VARCHAR(255);
+
+CREATE TABLE businesses (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(255)
+  );
+
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY,
+  first_name VARCHAR(255),
+  last_name VARCHAR(255)
+   );
+
+id          name                        
+----------  ----------------------------
+1           Grundy Hollow Wedding Chapel
+2           Amir's Towing               
+3           The Beagle Nightclub        
+4           Lotus Yoga                  
+5           Plumbing by Janet           
+6           Sushi World                 
+7           JoeBob's Sportz Barn 
+
+id          first_name  last_name 
+----------  ----------  ----------
+1           Bradford    Pitt      
+2           Mandy       Kaling    
+3           Angela      Jolie     
+4           Steven      Wonder    
+5           Holly       Berry     
+6           Merryl      Streepman 
+7           Denzel      George 
+
+user_id     business_id  stars       comment            
+----------  -----------  ----------  -------------------
+6           5            5           Reall drunk at time
+2           3            3           Not as drunk at tim
+7           5            5           Wasted drunk at tim
+6           2            4           Forgot my name drun
+9           5            5           Reall drunk at time
+
+sqlite> SELECT * FROM reviews INNER JOIN users WHERE reviews.user_id = users.id;
+id          user_id     business_id  stars       comment              id          first_name  last_name 
+----------  ----------  -----------  ----------  -------------------  ----------  ----------  ----------
+1           6           5            5           Reall drunk at time  6           Merryl      Streepman 
+2           2           3            3           Not as drunk at tim  2           Mandy       Kaling    
+3           7           5            5           Wasted drunk at tim  7           Denzel      George    
+4           6           2            4           Forgot my name drun  6           Merryl      Streepman 
+sqlite> SELECT * FROM reviews INNER JOIN users INNER JOIN businesses WHERE reviews.user_id = users.id;
+id          user_id     business_id  stars       comment              id          first_name  last_name   id          name                          user_id   
+----------  ----------  -----------  ----------  -------------------  ----------  ----------  ----------  ----------  ----------------------------  ----------
+1           6           5            5           Reall drunk at time  6           Merryl      Streepman   1           Grundy Hollow Wedding Chapel            
+1           6           5            5           Reall drunk at time  6           Merryl      Streepman   2           Amir's Towing                           
+1           6           5            5           Reall drunk at time  6           Merryl      Streepman   3           The Beagle Nightclub                    
+1           6           5            5           Reall drunk at time  6           Merryl      Streepman   4           Lotus Yoga                              
+1           6           5            5           Reall drunk at time  6           Merryl      Streepman   5           Plumbing by Janet                       
+1           6           5            5           Reall drunk at time  6           Merryl      Streepman   6           Sushi World                             
+1           6           5            5           Reall drunk at time  6           Merryl      Streepman   7           JoeBob's Sportz Barn                    
+2           2           3            3           Not as drunk at tim  2           Mandy       Kaling      1           Grundy Hollow Wedding Chapel            
+2           2           3            3           Not as drunk at tim  2           Mandy       Kaling      2           Amir's Towing                           
+2           2           3            3           Not as drunk at tim  2           Mandy       Kaling      3           The Beagle Nightclub                    
+2           2           3            3           Not as drunk at tim  2           Mandy       Kaling      4           Lotus Yoga                              
+2           2           3            3           Not as drunk at tim  2           Mandy       Kaling      5           Plumbing by Janet                       
+2           2           3            3           Not as drunk at tim  2           Mandy       Kaling      6           Sushi World                             
+2           2           3            3           Not as drunk at tim  2           Mandy       Kaling      7           JoeBob's Sportz Barn                    
+3           7           5            5           Wasted drunk at tim  7           Denzel      George      1           Grundy Hollow Wedding Chapel            
+3           7           5            5           Wasted drunk at tim  7           Denzel      George      2           Amir's Towing                           
+3           7           5            5           Wasted drunk at tim  7           Denzel      George      3           The Beagle Nightclub                    
+3           7           5            5           Wasted drunk at tim  7           Denzel      George      4           Lotus Yoga                              
+3           7           5            5           Wasted drunk at tim  7           Denzel      George      5           Plumbing by Janet                       
+3           7           5            5           Wasted drunk at tim  7           Denzel      George      6           Sushi World                             
+3           7           5            5           Wasted drunk at tim  7           Denzel      George      7           JoeBob's Sportz Barn                    
+4           6           2            4           Forgot my name drun  6           Merryl      Streepman   1           Grundy Hollow Wedding Chapel            
+4           6           2            4           Forgot my name drun  6           Merryl      Streepman   2           Amir's Towing                           
+4           6           2            4           Forgot my name drun  6           Merryl      Streepman   3           The Beagle Nightclub                    
+4           6           2            4           Forgot my name drun  6           Merryl      Streepman   4           Lotus Yoga                              
+4           6           2            4           Forgot my name drun  6           Merryl      Streepman   5           Plumbing by Janet                       
+4           6           2            4           Forgot my name drun  6           Merryl      Streepman   6           Sushi World                             
+4           6           2            4           Forgot my name drun  6           Merryl      Streepman   7           JoeBob's Sportz Barn                    
+sqlite> SELECT * FROM reviews INNER JOIN users INNER JOIN businesses WHERE reviews.user_id = users.id AND reviews.business_id = businesses.id
+   ...> ;
+id          user_id     business_id  stars       comment              id          first_name  last_name   id          name               user_id   
+----------  ----------  -----------  ----------  -------------------  ----------  ----------  ----------  ----------  -----------------  ----------
+1           6           5            5           Reall drunk at time  6           Merryl      Streepman   5           Plumbing by Janet            
+2           2           3            3           Not as drunk at tim  2           Mandy       Kaling      3           The Beagle Nightc            
+3           7           5            5           Wasted drunk at tim  7           Denzel      George      5           Plumbing by Janet            
+4           6           2            4           Forgot my name drun  6           Merryl      Streepman   2           Amir's Towing                
+
+
+name               stars       comment              last_name 
+-----------------  ----------  -------------------  ----------
+Plumbing by Janet  5           Reall drunk at time  Streepman 
+The Beagle Nightc  3           Not as drunk at tim  Kaling    
+Plumbing by Janet  5           Wasted drunk at tim  George    
+Amir's Towing      4           Forgot my name drun  Streepman 
+sqlite> SELECT businesses.name,reviews.stars,reviews.comment,users.last_name,users.first_name FROM reviews INNER JOIN users INNER JOIN businesses WHERE reviews.user_id = users.id AND reviews.business_id = businesses.id;
+name               stars       comment              last_name   first_name
+-----------------  ----------  -------------------  ----------  ----------
+Plumbing by Janet  5           Reall drunk at time  Streepman   Merryl    
+The Beagle Nightc  3           Not as drunk at tim  Kaling      Mandy     
+Plumbing by Janet  5           Wasted drunk at tim  George      Denzel    
+Amir's Towing      4           Forgot my name drun  Streepman   Merryl    
+sqlite> SELECT businesses.name,reviews.stars,reviews.comment,users.last_name,users.first_name FROM reviews INNER JOIN users INNER JOIN businesses WHERE reviews.user_id = users.id AND reviews.business_id = businesses.id AND stars =5;
+name               stars       comment              last_name   first_name
+-----------------  ----------  -------------------  ----------  ----------
+Plumbing by Janet  5           Reall drunk at time  Streepman   Merryl    
+Plumbing by Janet  5           Wasted drunk at tim  George      Denzel
