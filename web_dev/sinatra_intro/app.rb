@@ -58,7 +58,7 @@ get '/contact' do
 end
 
 # write a GET route that takes a query parameter and returns "Good Job, 'name'"
-
+=begin
 get '/' do
 	name = params[:name]
 	if name
@@ -67,3 +67,11 @@ get '/' do
 		"Good job you!"
 	end
 end
+=end
+
+# write a GET rout that adds 2 numbers provided by the user
+get '/:num_1/+/:num_2' do
+	ans = params[:num_1].to_i + params[:num_2].to_i
+  "#{params[:num_1]} + #{params[:num_2]} = #{ans}"
+end
+
