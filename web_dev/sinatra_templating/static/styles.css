@@ -1,4 +1,7 @@
 body {
   font-family: Helvetica;
-  color: blue;
+}
+
+h1 {
+  color: red;
 }
