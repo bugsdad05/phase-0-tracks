@@ -10,10 +10,31 @@
   <p>Welcome to the student management system.</p>
   <p>Click <a href="students/new">here</a> to create a new student.</p>
   <p>Click <a href="students/update">here</a> to update an existing student.</p>
+  <p>Click <a href="students/delete">here</a> to delete a student.</p>
+  
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Campus</th>
+      <th>Age</th>
+    </tr>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student['id'] %></td>
+        <td>&nbsp;&nbsp;&nbsp; <%= student['name'] %></td>
+        <td>&nbsp; <%= student['campus'] %></td>
+        <td>&nbsp; <%= student['age'] %></td>
+      </tr>
+    <% end %>
+  </table>
+
+<!-- comment out original ul to display students
   <ul>
     <% @students.each do |student| %>
-      <li><%= student['name'] %>, <%= student['age'] %>, <%= student['campus'] %></li>
+      <li><%= student['id'] %> &nbsp; <%= student['name'] %>, &nbsp; <%= student['campus'] %>, &nbsp;<%= student['age'] %></li>
     <% end %>
   </ul>
+-->
 </body>
 </html>
